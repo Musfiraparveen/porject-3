@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="logo.svg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oleo+Script:wght@400;700&family=Updock&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .navi li {
+            list-style: none;
+        }
+
+        .navi li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 30px;
+            background-color: #000;
+            position: sticky;
+            z-index: 1;
+        }
+
+        .navi ul {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        .navi li a {
+            text-decoration: none;
+            /* color: black; */
+            position: relative;
+        }
+
+        .navi li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            transform-origin: center;
+            transform: scale(0.1);
+            transition: transform ease-in-out 0.5s;
+        }
+
+        .navi li a:hover::after {
+            transform: scale(1.0);
+        }
+
+
+        .img {
+            width: 50%;
+            height: 45rem
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            padding: 20px 0px;
+        }
+
+        .content1 {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        .text {
+            width: 50%;
+            height: 45rem;
+            display: flex;
+            margin: auto;
+            background-color: #f2f2f2;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .text h3 {
+            font-size: 35px;
+        }
+
+        .text h6 {
+            font-size: 20px;
+        }
+
+        .text p {
+            font-size: 20px;
+        }
+
+        .text button {
+            width: 20%;
+            height: 40px;
+            border: 2px solid;
+        }
+
+        .button {
+            width: 100%;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .button a {
+            color: black;
+            text-decoration: none;
+            width: 125px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map {
+            width: 100%;
+            height: 40rem;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: auto;
+            height: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .form input {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            text-indent: 2%;
+
+        }
+
+        .form p {
+            font-size: 20px;
+        }
+
+        .form-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+        }
+
+        .form {
+            width: 85%;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 25px;
+            width: 100%;
+            height: 45rem;
+        }
+
+        .form h1 {
+            margin: auto;
+        }
+
+        .text2 {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .text2 h1 {
+            font-size: 35px;
+        }
+
+        .tetx2 p {
+            font-size: 18px;
+        }
+
+
+        .btn {
+            width: 85%;
+            margin: auto;
+        }
+
+        .btn a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            width: 125px;
+            height: 45px;
+            line-height: 40px;
+            letter-spacing: 1px;
+            font-size: 19px;
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        .btn button {
+            width: 30%;
+            text-align: center;
+            height: 50px;
+            cursor: pointer;
+            outline: none;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        ::placeholder {
+            font-size: 15px;
+        }
+
+        @media (min-width:300px) and (max-width:576px) {
+            .content {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .img {
+                width: 50%;
+            }
+
+            .img img {
+                width: 100%;
+            }
+        }
+
+        #contact {
+            background-color: #161515;
+            color: white;
+        }
+
+        #container {
+            padding-top: 0px;
+        }
+
+        footer {
+            font-family: "Jost", sans-serif;
+            background-color: #000;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 50px;
+        }
+
+        .fast li {
+            list-style: none;
+        }
+
+        .fast li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .fast p {
+            color: #fff;
+        }
+
+        .fast h5 {
+            color: #fff;
+        }
+
+        .product h3 {
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .product li a {
+            text-decoration: none;
+            color: #fff;
+            line-height: 35px;
+            font-size: 17px;
+            transition: 1s;
+        }
+
+        .product li a:hover {
+            color: #ea5c5cb8;
+        }
+
+        .product li {
+            list-style: none;
+        }
+
+        .product p {
+            color: #fff;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .icon i {
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 10px;
+            transition: 1s;
+        }
+
+        .icon :hover {
+            cursor: pointer;
+            background-color: maroon;
+        }
+
+        .fast {
+            line-height: 35px;
+        }
+
+        .copy {
+            color: white;
+            text-align: center;
+            border-top: 1px solid white;
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.svg">
+        </div>
+        <div class="navi">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meun.html">Menu</a></li>
+                <li><a href="Aboutus.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <img src="shopping-basket (1).png">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content" id="container">
+            <div class="img">
+                <img src="table.jpg">
+            </div>
+            <div class="text">
+                <h3>Find Us</h3>
+                <h6>Where</h6>
+                <p>676 Pacific C Hwy
+                    Huntington Beach, CA 67898</p>
+                <div class="button">
+                    <a href="#map">View Map</a>
+                    <a href="#book" id="contact">Contact Us</a>
+                </div>
+                <h6>When</h6>
+                <p>Monday – Friday</p>
+                <p>7am – 6pm</p>
+                <p>Saturday/Sunday</p>
+                <p>8am – 6pm</p>
+            </div>
+        </div>
+        <div class="map">
+            <iframe id="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15563.29086518852!2d78.72321917943482!3d12.790016843262885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad097106ef6705%3A0xae5c00ad523a3f2f!2sZaitoon%20Restaurant%2C%20Ambur!5e0!3m2!1sen!2sin!4v1728629955943!5m2!1sen!2sin"
+                width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="content">
+            <div class="text">
+                <h3>Enquiries</h3>
+                <p>PR & MARKETING ENQUIRIES</p>
+                <p>+1 234 567 77 66</p>
+                <p>CATERING ENQUIRIES</p>
+                <p>+1 234 567 77 66</p>
+                <p>RESERVATIONS $ PRIVATE DINING</p>
+                <p>+1 234 567 77 66</p>
+            </div>
+            <div class="img">
+                <img src="glass.jpg" alt="">
+            </div>
+        </div>
+        <div class="content1">
+            <div class="img">
+                <img src="chair.jpg" alt="">
+            </div>
+            <div class="form-container" id="book">
+                <form>
+                    <div class="form-group">
+                        <div class="text2">
+                            <h1>Contact Us</h1>
+                            <p>Find Your Desire Dish In Our Resturant</p>
+                        </div>
+                        <div class="form-content">
+                            <div class="form">
+                                <p>Name</p>
+                                <input type="text" name="Enter your name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form">
+                                <p>Email</p>
+                                <input type="email" name="email" placeholder="Enter your Email" required>
+                            </div>
+                            <div class="form">
+                                <p>Password</p>
+                                <input type="password" name="password" placeholder="Password" required>
+                            </div>
+
+                            <div class="form">
+                                <p>Phone</p>
+                                <input type="text" name="Enter your Number" placeholder="Enter your Number" required>
+                            </div>
+
+                            <div class="btn">
+                                <a href="#">Sign up</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="fast">
+                <img src="logo.svg" alt="">
+                <p>676 Pacific C Hwy
+                    Huntington Beach, CA 67898</p>
+                <ul>
+                    <li><a href="#">support@example.com</a></li>
+                </ul>
+                <h5>+(084) 456-0789</h5>
+            </div>
+            <div class="product">
+                <h3>PRODUCT</h3>
+                <ul>
+                    <li><a href="">Burger</a></li>
+                    <li><a href="">King Delight Product</a></li>
+                    <li><a href="">Crispy Flavour</a></li>
+                    <li><a href="">Breakfast Product</a></li>
+                    <li><a href="">Pizza</a></li>
+                    <li><a href="">French Fries</a></li>
+                    <li><a href="">Sauages</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>HAPPY HOURS</h3>
+                <P>Monday – Friday: 8am – 4pm</P>
+                <P>Saturday: 8am – 12am</P>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright © 2023 Fazfood. All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

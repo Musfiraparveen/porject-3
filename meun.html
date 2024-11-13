@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oleo+Script:wght@400;700&family=Updock&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .morph-container {
+            position: relative;
+            width: 350px;
+            height: 230px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .morph-container img {
+            width: 100%;
+            height: 100%;
+            transition: border-radius 0.8s ease, transform 0.8s ease;
+            object-fit: cover;
+        }
+
+        .morph-container .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .morph-container:hover img {
+            border-radius: 50%;
+            transform: scale(1.1);
+        }
+
+        .morph-container:hover .overlay-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .morph-container:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .our-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px 0px;
+        }
+
+        #menu {
+            padding: 50px 0px;
+        }
+
+        .overlay-content div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .overlay-content div h4 {
+            text-align: center;
+        }
+
+        body {
+            background-color: #f5deb37a;
+            font-family: "Lato", sans-serif;
+        }
+
+        .navi li {
+            list-style: none;
+        }
+
+        .navi li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 30px;
+            background-color: #000;
+            position: sticky;
+            z-index: 1;
+        }
+
+        .navi ul {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        .navi li a {
+            text-decoration: none;
+            /* color: black; */
+            position: relative;
+        }
+
+        .navi li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            transform-origin: center;
+            transform: scale(0.1);
+            transition: transform ease-in-out 0.5s;
+        }
+
+        .navi li a:hover::after {
+            transform: scale(1.0);
+        }
+
+        .our-menu h1 {
+            font-size: 50px;
+        }
+
+        .div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .text h5{
+            font-size: 20px;
+        }
+        footer {
+            font-family: "Jost", sans-serif;
+            background-color: #000;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 50px;
+        }
+
+        .fast li {
+            list-style: none;
+        }
+
+        .fast li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .fast p {
+            color: #fff;
+        }
+
+        .fast h5 {
+            color: #fff;
+        }
+
+        .product h3 {
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .product li a {
+            text-decoration: none;
+            color: #fff;
+            line-height: 35px;
+            font-size: 17px;
+            transition: 1s;
+        }
+
+        .product li a:hover {
+            color: #ea5c5cb8;
+        }
+
+        .product li {
+            list-style: none;
+        }
+
+        .product p {
+            color: #fff;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .icon i {
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 10px;
+            transition: 1s;
+        }
+
+        .icon :hover {
+            cursor: pointer;
+            background-color: maroon;
+        }
+
+        .fast {
+            line-height: 35px;
+        }
+        .copy{
+            color: white; 
+            text-align: center;
+             border-top: 1px solid white; 
+             padding: 20px 0px;
+        }
+        .hamburger-icon {
+            border: none;
+            background-color: transparent;
+            line-height: 0px;
+        }
+
+        .hamburger-icon #dropdown {
+            appearance: none;
+        }
+
+        header .icons i {
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .fa-user:before {
+            content: "\f007";
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) .search-bar-container {
+            display: block;
+        }
+
+        header .search-bar-container {
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            font-size: 20px;
+        }
+
+        .search {
+            width: 50%;
+            height: 55px;
+            text-indent: 5%;
+            display: flex;
+            margin: 0 0 0 auto;
+            outline: none;
+            border-radius: 35px;
+            border: none;
+        }
+
+        .search-bar-container ::placeholder {
+            text-indent: 5%;
+            font-size: 17px;
+        }
+
+        .hamburger-icon1 {
+            display: none;
+        }
+
+        .hamburger-icon1 {
+            border: none;
+            background-color: transparent;
+        }
+
+        .hamburger-icon1 .fa-bars {
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-icon1 #dropdown1 {
+            appearance: none;
+            width: 100%;
+        }
+
+        .icon2 {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.svg">
+            </div>
+            <div class="navi">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a href="#aboutus">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="icons">
+                <button class="hamburger-icon" fdprocessedid="jo5kz">
+                    <label for="dropdown">
+                        <div class="icon2">
+                            <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
+                            <i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="dropdown">
+                </button>
+            </div>
+
+            <form action="" class="search-bar-container">
+                <input type="search" class="search" id="search-bar" placeholder="Search Our Website">
+            </form>
+        </nav>
+    </header>
+    <div class="our-menu">
+        <div class="div">
+            <h1>OUR MENU</h1>
+            <h3>Find Your Desire Dish In Our Restaurant</h3>
+        </div>
+        <div class="menu">
+            <div class="box">
+                <div class="morph-container">
+                    <img src="bun.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>7.05 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>BURGER</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="french-fries.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>4.35 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>FRENCH FRIES</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="taccos.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>5.67 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>TACOS</h5>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="box">
+                <div class="morph-container">
+                    <img src="crunchy chicken.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>8.04 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>GRILLED CHICKEN</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="gallery5.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>3.85 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>CRISPY CHICKEN</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="beef-burger.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>5.07 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>BEEF BURGER</h5>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="box">
+                <div class="morph-container">
+                    <img src="mixed-pizza.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>6.87 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>CLASSIC PIZZA</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="beef-hot-dog.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>4.34 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>HOT DOG</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="shawarma.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>8.35 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>BEEF SHAWARMA</h5>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="box">
+                <div class="morph-container">
+                    <img src="fried-chicken.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>6.89 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>FRIED CHICKEN</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="shawarma1.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>5.45 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>CLASSIC SHAWARMA</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="morph-container">
+                    <img src="pizzaa.jpg.jpg" alt="">
+                    <div class="overlay-content">
+                        <div>
+                            <p>Good food bought today.</p>
+                            <h4>5.67 $</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <h5>ITALIAN PIZZA</h5>
+                </div>
+            </div>
+        </div>
+        <div class="our-menu" id="menu">
+            <h1>COMBO OFFERS</h1>
+            <div class="menu">
+                <div class="box">
+                    <div class="morph-container">
+                        <img src="sandwich.jpg" alt="">
+                        <div class="overlay-content">
+                            <div>
+                                <p>Good food bought today.</p>
+                                <h4>10.45 $</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>CRUNCH & MUNCH DUO</h5>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="morph-container">
+                        <img src="grilled-beef-burger.jpg" alt="">
+                        <div class="overlay-content">
+                            <div>
+                                <p>Good food bought today.</p>
+                                <h4>12.02 $</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>BURGER BLISS BOX</h5>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="morph-container">
+                        <img src="stick.jpg" alt="">
+                        <div class="overlay-content">
+                            <div>
+                                <p>Good food bought today.</p>
+                                <h4>9.35 $</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h5>GOLDEN CRUNCH COMBO</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="fast">
+                <img src="logo.svg" alt="">
+                <p>676 Pacific C Hwy
+                    Huntington Beach, CA 67898</p>
+                <ul>
+                    <li><a href="#">support@example.com</a></li>
+                </ul>
+                <h5>+(084) 456-0789</h5>
+            </div>
+            <div class="product">
+                <h3>PRODUCT</h3>
+                <ul>
+                    <li><a href="">Burger</a></li>
+                    <li><a href="">King Delight Product</a></li>
+                    <li><a href="">Crispy Flavour</a></li>
+                    <li><a href="">Breakfast Product</a></li>
+                    <li><a href="">Pizza</a></li>
+                    <li><a href="">French Fries</a></li>
+                    <li><a href="">Sauages</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>HAPPY HOURS</h3>
+                <P>Monday – Friday: 8am – 4pm</P>
+                <P>Saturday: 8am – 12am</P>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright © 2023 Fazfood. All rights reserved</p>
+        </div>
+
+</body>
+
+</html>
