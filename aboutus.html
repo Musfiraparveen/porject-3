@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="logo.svg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oleo+Script:wght@400;700&family=Updock&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .navi li {
+            list-style: none;
+        }
+
+        .navi li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navi a.active {
+            color: #0ef;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 30px;
+            background-color: #000;
+            position: sticky;
+            z-index: 1;
+        }
+
+        .navi ul {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        .navi li a {
+            text-decoration: none;
+            /* color: black; */
+            position: relative;
+        }
+
+        .navi li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            transform-origin: center;
+            transform: scale(0.1);
+            transition: transform ease-in-out 0.5s;
+        }
+
+        .navi li a:hover::after {
+            transform: scale(1.0);
+        }
+
+        .video {
+            width: 100%;
+            height: 80vh;
+            background-image: url(banner1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.7);
+            background-color: rgb(0 0 0 / 29%);
+            font-family: 'poppins', sans-serif;
+            filter: brightness(1);
+        }
+
+        .header h1 {
+            font-size: 50px;
+            color: #f9f9f9;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: rgb(206, 206, 206);
+        }
+
+        #active {
+            color: #ffd599;
+        }
+
+        .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 50px 0px;
+        }
+
+        .content h1 {
+            text-transform: uppercase;
+            font-weight: 300px;
+            font-size: 28px;
+            line-height: 1.39286em;
+            letter-spacing: 3px;
+            margin: 7px 0px;
+        }
+
+        .content h2 {
+            text-transform: uppercase;
+            font-weight: 300px;
+            font-size: 28px;
+            line-height: 1.39286em;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 7px 0px;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .text {
+            font-family: "Jost", sans-serif;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            height: 35rem;
+        }
+
+        .text h1 {
+            font-size: 25px;
+        }
+
+        .text p {
+            font-size: 17px;
+            line-height: 30px;
+        }
+
+        .text a {
+            text-decoration: none;
+            width: 11rem;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            color: white;
+            letter-spacing: 2px;
+            background-color: grey;
+        }
+
+        .image {
+            width: 50%;
+            height: 35rem;
+            /* background-image: url(nuggets.jpg);
+            background-position: left;
+            background-size: cover;
+            background-attachment: fixed; */
+        }
+
+        .image img {
+            width: 100%;
+            height: 35rem;
+            object-fit: cover;
+        }
+
+        .content1 {
+            width: 100%;
+            height: 250px;
+            background-image: url(black.png);
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 250px;
+            width: 85%;
+            margin: auto;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .about {
+            color: #ffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about h1 {
+            font-size: 30px;
+        }
+
+        .about h4 {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            font-family: "Jost", sans-serif;
+            background-color: #000;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 50px;
+        }
+
+        .fast li {
+            list-style: none;
+        }
+
+        .fast li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .fast p {
+            color: #fff;
+        }
+
+        .fast h5 {
+            color: #fff;
+        }
+
+        .product h3 {
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .product li a {
+            text-decoration: none;
+            color: #fff;
+            line-height: 35px;
+            font-size: 17px;
+            transition: 1s;
+        }
+
+        .product li a:hover {
+            color: #ea5c5cb8;
+        }
+
+        .product li {
+            list-style: none;
+        }
+
+        .product p {
+            color: #fff;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .icons i {
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 10px;
+            transition: 1s;
+        }
+
+        .icons :hover {
+            cursor: pointer;
+            background-color: maroon;
+        }
+
+        .fast {
+            line-height: 35px;
+        }
+
+        .copy {
+            color: white;
+            text-align: center;
+            border-top: 1px solid white;
+            padding: 20px 0px;
+        }
+
+        #main {
+            padding-bottom: 50px;
+        }
+
+        @media (min-width:992px) and (max-width:1200px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .video {
+                height: 500px;
+            }
+
+            .header {
+                height: 500px;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:992px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .video {
+                height: 500px;
+            }
+
+            .header {
+                height: 500px;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .header h1 {
+                font-size: 45px;
+            }
+
+            .content {
+                width: 95%;
+                margin: auto;
+                gap: 30px;
+                padding: 40px 0px;
+            }
+
+            .content h1 {
+                font-size: 25px;
+                letter-spacing: 2px;
+                margin: 0;
+            }
+
+            .content h2 {
+                font-size: 25px;
+                letter-spacing: 2px;
+            }
+
+            .container {
+                gap: 30px;
+                width: 100%;
+            }
+
+            .text {
+                gap: 15px;
+                height: 30rem;
+            }
+
+            .text h1 {
+                font-size: 21px;
+                letter-spacing: 2px;
+            }
+
+            .text p {
+                font-size: 15px;
+                line-height: 25px;
+            }
+
+            .text a {
+                width: 9rem;
+                letter-spacing: 1px;
+            }
+
+            .image {
+                width: 50%;
+                height: 30rem;
+            }
+
+            .image img {
+                width: 100%;
+                height: 30rem;
+                object-fit: cover;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .service {
+                gap: 14px;
+            }
+
+            .about {
+                gap: 7px;
+            }
+
+            .about h1 {
+                font-size: 20px;
+            }
+
+            .about h4 {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+        }
+
+        @media (min-width:576px) and (max-width:768px) {
+            .logo {
+                width: 100%;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .navi li a {
+                display: none;
+            }
+
+            .video {
+                height: 500px;
+            }
+
+            .header {
+                height: 500px;
+            }
+
+            .box {
+                width: 100%;
+                height: 250px;
+            }
+
+            .header h1 {
+                font-size: 45px;
+            }
+
+            .content {
+                width: 95%;
+                margin: auto;
+                gap: 30px;
+                padding: 40px 0px;
+            }
+
+            .content h1 {
+                font-size: 25px;
+                letter-spacing: 2px;
+                margin: 0;
+            }
+
+            .content h2 {
+                font-size: 25px;
+                letter-spacing: 2px;
+            }
+
+            .container {
+                gap: 30px;
+                width: 100%;
+            }
+
+            .text {
+                gap: 15px;
+                height: 27rem;
+            }
+
+            .text h1 {
+                font-size: 21px;
+                letter-spacing: 2px;
+            }
+
+            .text p {
+                font-size: 15px;
+                line-height: 25px;
+            }
+
+            .text a {
+                width: 9rem;
+                letter-spacing: 1px;
+            }
+
+            .image {
+                width: 50%;
+                height: 27rem;
+            }
+
+            .image img {
+                width: 100%;
+                height: 27rem;
+                object-fit: cover;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .service {
+                gap: 8px;
+            }
+
+            .about {
+                gap: 4px;
+            }
+
+            .about h1 {
+                font-size: 17px;
+            }
+
+            .about h4 {
+                font-size: 15px;
+            }
+
+            .content1 {
+                height: 250px;
+            }
+
+            .icon img {
+                width: 85%;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width:300px) and (max-width:576px) {
+            .logo {
+                width: 100%;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .navi li a {
+                display: none;
+            }
+
+            .video {
+                height: 370px;
+            }
+
+            .header {
+                height: 370px;
+            }
+
+            .box {
+                width: 95%;
+                flex-wrap: wrap;
+                gap: 0px;
+                height: 330px;
+                justify-content: space-around;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .content {
+                width: 90%;
+                margin: auto;
+                gap: 10px;
+                padding: 25px 0px;
+            }
+
+            .content h1 {
+                font-size: 14px;
+                letter-spacing: 1px;
+                margin: 0;
+            }
+
+            .content h2 {
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            .container {
+                gap: 20px;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .text {
+                gap: 10px;
+                height: auto;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .text h1 {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .text p {
+                font-size: 14px;
+                line-height: 23px;
+            }
+
+            .text a {
+                width: 7rem;
+                letter-spacing: 0px;
+                height: 40px;
+                font-size: 13px;
+                line-height: 40px;
+            }
+
+            .image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .image img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .service {
+                gap: 8px;
+                width: 50%;
+            }
+
+            .about {
+                gap: 4px;
+            }
+
+            .about h1 {
+                font-size: 17px;
+            }
+
+            .about h4 {
+                font-size: 15px;
+            }
+
+            .content1 {
+                height: 330px;
+            }
+
+            .icon img {
+                width: 85%;
+            }
+
+            #main {
+                padding-bottom: 0px;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 30px 0;
+                flex-wrap: wrap;
+            }
+
+            .fast {
+                line-height: 28px;
+                width: 500px;
+            }
+
+            .fast p {
+                color: #fff;
+                font-size: 15px;
+            }
+
+            .product {
+                gap: 5px;
+                justify-content: center;
+                align-items: flex-start;
+                width: 500px;
+            }
+
+            .product li a {
+                line-height: 30px;
+                font-size: 15px;
+            }
+
+            .copy {
+                font-size: 13px;
+            }
+
+            .navbar {
+                padding: 5px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.svg">
+            </div>
+            <div class="navi">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a id="active" href="#aboutus">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="icons">
+                <img src="shopping-basket (1).png">
+            </div>
+        </nav>
+    </header>
+    <div class="video">
+        <div class="header">
+            <h1>ABOUT US</h1>
+        </div>
+    </div>
+    <section>
+        <div class="content">
+            <div class="div">
+                <h1>Faz food is for everyone who </h1>
+                <h2>collects beautiful moments</h2>
+            </div>
+            <div class="container">
+                <div class="text">
+                    <h1>ONLY THE FINEST FOOD $ GREAT SERVICE</h1>
+                    <P>Our mission is to provide a quick, enjoyable dining experience with fresh, high-quality
+                        ingredients
+                        and a diverse menu to satisfy every craving. We’re dedicated to bringing exciting flavors to the
+                        table, combining the classics with our unique twist to create a one-of-a-kind fast-food
+                        experience.
+                    </P>
+                    <a href="#">READ MORE</a>
+                </div>
+                <div class="image">
+                    <img src="nuggets.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="content1">
+            <div class="box">
+                <div class="service">
+                    <div class="icon">
+                        <img src="smile.png" alt="">
+                    </div>
+                    <div class="about">
+                        <h1>98%</h1>
+                        <h4>Customer Satisfaction</h4>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="icon">
+                        <img src="fast-food.png" alt="">
+                    </div>
+                    <div class="about">
+                        <h1>654+</h1>
+                        <h4>Delicious delight</h4>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="icon">
+                        <img src="responsible.png" alt="">
+                    </div>
+                    <div class="about">
+                        <h1>100%</h1>
+                        <h4>Our services</h4>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="icon">
+                        <img src="shopping-bag.png" alt="">
+                    </div>
+                    <div class="about">
+                        <h1>6758+</h1>
+                        <h4>order delivered</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <div class="container" id="main">
+                <div class="image">
+                    <img src="view-delicious-shawarma-dish.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h1>OUR GOALS & HISTORY</h1>
+                    <P>Our mission is to provide a quick, enjoyable dining experience with fresh, high-quality
+                        ingredients
+                        and a diverse menu to satisfy every craving. We’re dedicated to bringing exciting flavors to the
+                        table, combining the classics with our unique twist to create a one-of-a-kind fast-food
+                        experience.
+                    </P>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="fast">
+                <img src="logo.svg" alt="">
+                <p>676 Pacific C Hwy
+                    Huntington Beach, CA 67898</p>
+                <ul>
+                    <li><a href="#">support@example.com</a></li>
+                </ul>
+                <h5>+(084) 456-0789</h5>
+            </div>
+            <div class="product">
+                <h3>PRODUCT</h3>
+                <ul>
+                    <li><a href="">Burger</a></li>
+                    <li><a href="">King Delight Product</a></li>
+                    <li><a href="">Crispy Flavour</a></li>
+                    <li><a href="">Breakfast Product</a></li>
+                    <li><a href="">Pizza</a></li>
+                    <li><a href="">French Fries</a></li>
+                    <li><a href="">Sauages</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <h3>HAPPY HOURS</h3>
+                <P>Monday – Friday: 8am – 4pm</P>
+                <P>Saturday: 8am – 12am</P>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright © 2023 Fazfood. All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

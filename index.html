@@ -36,6 +36,10 @@
             text-decoration: none;
         }
 
+        .navi a.active {
+            color: #0ef;
+        }
+
         .navbar {
             width: 100%;
             display: flex;
@@ -43,7 +47,7 @@
             align-items: center;
             padding: 5px 30px;
             background-color: #000;
-            position: fixed;
+            position: sticky;
             z-index: 1;
         }
 
@@ -295,90 +299,98 @@
             font-size: 30px;
         }
 
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 85px;
-        }
-
-        .places {
-            width: 90%;
+        .container-image {
+            width: 1200px;
             margin: auto;
             display: flex;
-            gap: 90px 80px;
-            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .places .cards {
+        .image-container1 {
             position: relative;
             width: 350px;
-            height: 300px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 10px 10px 20px gray;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            transition: 0.5s;
-        }
-
-        .places .cards .imgbox {
-            position: absolute;
-            top: 20px;
-            transition: 0.5s;
-            width: 300px;
-            height: 220px;
+            height: 240px;
             overflow: hidden;
         }
 
-        .places .cards .imgbox img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .image-container1 img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 25px;
+            display: block;
         }
 
-        .places .cards:hover .imgbox {
-            top: -100px;
-            scale: 0.75;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-        }
-
-        .places .cards:hover {
-            height: 350px;
-        }
-
-        .places .cards .content1 {
+        .box {
             display: flex;
-            position: absolute;
-            gap: 15px;
-            width: 100%;
-            top: 252px;
-            height: 30px;
-            overflow: hidden;
-            text-align: center;
-            transition: 0.5s;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 23px;
         }
 
-        .places .cards:hover .content1 {
-            height: 250px;
-            top: 130px;
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border-radius: 25px;
+            background: rgba(106, 120, 129, 0.7);
+            transition: height 0.7s ease;
         }
 
-        .places .cards .content1 h2 {
-            font-size: 22px;
+        .image-container1:hover .overlay {
+            height: 100%;
+        }
+
+        .overlay-content {
+            position: absolute;
+            top: 35%;
+            left: 0%;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            padding: 0px 25px;
+        }
+
+        .image-container1:hover .overlay-content {
+            opacity: 1;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            max-width: 2100px;
+            flex-wrap: wrap;
+        }
+
+        .dish h1 {
+            font-size: 50px;
+        }
+
+        .overlay1 h3 {
+            font-size: 18px;
             font-weight: 700;
             color: #41681a;
+            text-transform: uppercase;
         }
 
-        .places .cards .content1 p {
-            font-size: 1.05em;
-            color: #555;
-            padding: 0px 35px;
+        .cards {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px 0px;
         }
 
         .basket {
@@ -709,6 +721,7 @@
         }
 
         .expert img {
+            width: 360px;
             object-fit: cover;
             transition: all 0.5s ease;
             border-radius: 25px;
@@ -716,16 +729,20 @@
         }
 
         .chefs {
+            width: 1200px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             gap: 60px;
         }
 
         .chef1 {
+            width: 1200px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             gap: 60px;
         }
 
@@ -882,12 +899,11 @@
             margin: auto;
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 50px;
         }
 
         .blog {
-            width: 100%;
+            width: 500px;
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -918,6 +934,998 @@
             justify-content: center;
             align-items: center;
         }
+
+        #active {
+            color: #ffd599;
+        }
+
+        @media (min-width:992px) and (max-width:1200px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .slider {
+                height: 70vh;
+            }
+
+            .container-image {
+                width: 100%;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .test h1 {
+                font-size: 42px;
+            }
+
+            .test {
+                height: 500px;
+            }
+
+            .banner {
+                height: 500px;
+            }
+
+            .banner img {
+                height: 500px;
+                object-fit: contain;
+            }
+
+            .content4 {
+                background-color: #ffc37b;
+                margin: 50px;
+                padding: 0;
+            }
+
+            .img1 {
+                width: 100%;
+            }
+
+            .img1 img {
+                width: 270px;
+                object-fit: cover;
+            }
+
+            .delivery {
+                height: 600px;
+            }
+
+            .deliver {
+                height: 600px;
+            }
+
+            .text4 h1 {
+                font-size: 42px;
+            }
+
+            .text4 {
+                padding-right: 10px;
+            }
+
+            .text4 p {
+                font-size: 16px;
+                line-height: 25px;
+            }
+
+            .chef {
+                width: 100%;
+            }
+
+            .chefs {
+                width: 100%;
+            }
+
+            .chef1 {
+                gap: 44px;
+            }
+
+            .expert {
+                height: 320px;
+            }
+
+            .expert img {
+                width: 100%;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .aboutus p {
+                font-size: 15px;
+            }
+
+            .service p {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:992px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .slider {
+                height: 80vh;
+            }
+
+            .image1 {
+                width: 100%;
+                overflow: scroll;
+                scrollbar-width: none;
+                gap: 40px;
+            }
+
+            .text1 {
+                font-size: 23px;
+            }
+
+            .content3 {
+                width: 90%;
+                margin: auto;
+                gap: 15px;
+                padding: 45px 0px;
+            }
+
+            .dish h1 {
+                font-size: 37px;
+            }
+
+            .cards {
+                padding: 0px;
+            }
+
+            .container-image {
+                width: 100%;
+                gap: 35px;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .box {
+                gap: 15px;
+            }
+
+            .test h1 {
+                font-size: 36px;
+                line-height: 43px;
+            }
+
+            .test h5 {
+                letter-spacing: 3px;
+                font-size: 17px;
+            }
+
+            .test p {
+                width: 100%;
+                font-size: 15px;
+                line-height: 22px;
+            }
+
+            .test {
+                height: 80vh;
+                gap: 15px;
+                padding-left: 45px;
+            }
+
+            .banner {
+                height: 500px;
+            }
+
+            .banner img {
+                height: 500px;
+                object-fit: contain;
+            }
+
+            .content4 {
+                width: 100%;
+                background-color: #ffc37b;
+                padding: 0;
+                margin: 50px 0px;
+            }
+
+            .img1 {
+                width: 33%;
+            }
+
+            .img1 img {
+                width: 240px;
+                object-fit: cover;
+            }
+
+            .overlay1 h3 {
+                font-size: 16px;
+            }
+
+            .image-container1 {
+                width: 320px;
+                height: 250px;
+            }
+
+            .text2 h1 {
+                font-size: 38px;
+            }
+
+            .delivery {
+                margin: 0;
+                height: 450px;
+            }
+
+            .deliver {
+                height: 450px;
+            }
+
+            .text4 h1 {
+                font-size: 30px;
+            }
+
+            .text4 {
+                padding-right: 10px;
+            }
+
+            .text4 p {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            .text3 {
+                gap: 10px;
+                padding: 0px 18px;
+            }
+
+            .chef1 {
+                gap: 40px;
+            }
+
+            .chef {
+                width: 100%;
+            }
+
+            .chefs {
+                width: 100%;
+            }
+
+            .cook {
+                width: 40%;
+                gap: 15px;
+            }
+
+            .about {
+                gap: 30px;
+                padding: 35px 0px;
+            }
+
+            .about h1 {
+                font-size: 35px;
+            }
+
+            .expert {
+                height: 310px;
+            }
+
+            .expert img {
+                width: 100%;
+                object-position: top;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .aboutus p {
+                font-size: 15px;
+            }
+
+            .service p {
+                font-size: 15px;
+            }
+
+            .content6 {
+                gap: 30px;
+                padding: 0px;
+            }
+
+            .content6 h1 {
+                font-size: 40px;
+            }
+
+            .blogs {
+                width: 100%;
+                gap: 30px;
+                flex-wrap: wrap;
+                padding: 0px 19px;
+            }
+
+            .blog {
+                width: 350px;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .text {
+                font-size: 1.7rem;
+            }
+
+            .populars {
+                padding: 0;
+            }
+        }
+
+        @media (min-width:576px) and (max-width:768px) {
+            .slider {
+                height: 65vh;
+            }
+
+            .image1 {
+                width: 100%;
+                overflow: scroll;
+                scrollbar-width: none;
+                gap: 40px;
+            }
+
+            .text1 {
+                font-size: 20px;
+            }
+
+            .content3 {
+                width: 90%;
+                margin: auto;
+                gap: 15px;
+                padding: 45px 0px;
+            }
+
+            .dish h1 {
+                font-size: 35px;
+            }
+
+            .cards {
+                padding: 0px;
+            }
+
+            .container-image {
+                width: 100%;
+                gap: 25px;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .box {
+                gap: 15px;
+            }
+
+            .test h1 {
+                font-size: 30px;
+                line-height: 35px;
+            }
+
+            .test h5 {
+                letter-spacing: 3px;
+                font-size: 17px;
+            }
+
+            .test p {
+                width: 100%;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .test {
+                height: 450px;
+                gap: 12px;
+                padding-left: 35px;
+            }
+
+            .test a {
+                width: 120px;
+                height: 45px;
+                font-size: 15px;
+                line-height: 45px;
+            }
+
+            .banner {
+                height: 450px;
+            }
+
+            .banner img {
+                height: 450px;
+                object-fit: contain;
+            }
+
+            .content4 {
+                width: 100%;
+                background-color: #ffc37b;
+                padding: 0;
+                margin: 50px 0px;
+            }
+
+            .img1 {
+                width: 45%;
+            }
+
+            .img1 img {
+                width: 240px;
+                object-fit: cover;
+            }
+
+            .overlay1 h3 {
+                font-size: 16px;
+            }
+
+            .image-container1 {
+                width: 320px;
+                height: 250px;
+            }
+
+            .text2 h1 {
+                font-size: 35px;
+            }
+
+            .delivery {
+                margin: 0;
+                height: 400px;
+            }
+
+            .deliver {
+                height: 400px;
+            }
+
+            .text4 h1 {
+                font-size: 20px;
+            }
+
+            .text4 {
+                padding-right: 10px;
+            }
+
+            .text4 p {
+                font-size: 11px;
+                line-height: 20px;
+            }
+
+            .text4 a {
+                width: 110px;
+                height: 43px;
+                font-size: 14px;
+                line-height: 38px;
+            }
+
+            .text3 {
+                gap: 10px;
+                padding: 0px 18px;
+            }
+
+            .chef1 {
+                gap: 40px;
+            }
+
+            .chef {
+                width: 100%;
+            }
+
+            .chefs {
+                width: 100%;
+            }
+
+            .cook {
+                width: 45%;
+                gap: 15px;
+            }
+
+            .about {
+                gap: 30px;
+                padding: 35px 0px;
+            }
+
+            .about h1 {
+                font-size: 32px;
+            }
+
+            .expert {
+                height: 320px;
+            }
+
+            .expert img {
+                width: 100%;
+                object-position: top;
+            }
+
+            .product {
+                width: 350px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .aboutus p {
+                font-size: 15px;
+            }
+
+            .service p {
+                font-size: 15px;
+            }
+
+            .content6 {
+                gap: 30px;
+                padding: 0px;
+            }
+
+            .content6 h1 {
+                font-size: 40px;
+            }
+
+            .blogs {
+                width: 100%;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .blog {
+                width: 350px;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .text {
+                font-size: 1.7rem;
+            }
+
+            .populars {
+                padding: 0;
+            }
+
+            .navi {
+                display: none;
+            }
+        }
+
+        @media (min-width:300px) and (max-width:576px) {
+            .logo {
+                width: 50%;
+            }
+
+            .logo img {
+                width: 100px;
+            }
+
+            #search {
+                display: none;
+            }
+
+            .slider {
+                height: 65vh;
+            }
+
+            .image1 {
+                width: 100%;
+                overflow: scroll;
+                scrollbar-width: none;
+                gap: 20px;
+            }
+
+            .image img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .image h5 {
+                font-size: 15px;
+            }
+
+            .text1 {
+                font-size: 15px;
+            }
+
+            .content3 {
+                width: 90%;
+                margin: auto;
+                gap: 5px;
+                padding: 20px 0px;
+            }
+
+            .dish h1 {
+                font-size: 23px;
+            }
+
+            .cards {
+                gap: 20px;
+                padding: 10px 0px;
+            }
+
+            .overlay-content {
+                text-align: center;
+                top: 30%;
+                left: 0;
+                transform: translate(0, 0);
+            }
+
+            .container-image {
+                width: 100%;
+                gap: 23px;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .box {
+                gap: 8px;
+            }
+
+            .test h1 {
+                font-size: 18px;
+                line-height: 20px;
+            }
+
+            .test h5 {
+                letter-spacing: 3px;
+                font-size: 13px;
+            }
+
+            .test p {
+                width: 100%;
+                font-size: 10px;
+                line-height: 12px;
+                letter-spacing: 0.5px;
+                text-align: center;
+            }
+
+            .test {
+                width: 100%;
+                height: 170px;
+                gap: 10px;
+                margin: 15px;
+                padding: 0;
+                align-items: center;
+            }
+
+            .test a {
+                width: 72px;
+                height: 35px;
+                font-size: 10px;
+                line-height: 35px;
+            }
+
+            .banner {
+                width: 100%;
+                height: 265px;
+            }
+
+            .content5 {
+                gap: 25px;
+            }
+
+            .banner img {
+                height: 300px;
+                object-fit: contain;
+            }
+
+            .content4 {
+                width: 100%;
+                background-color: #ffc37b;
+                padding: 0;
+                margin: 30px 0px;
+                flex-wrap: wrap-reverse;
+                display: flex;
+                gap: 0px;
+            }
+
+            .img1 {
+                width: 70%;
+                border-radius: 20px;
+            }
+
+            .img1 img {
+                width: 180px;
+                object-fit: cover;
+            }
+
+            .overlay1 h3 {
+                font-size: 14px;
+            }
+
+            .overlay-content p {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .image-container1 {
+                width: 260px;
+                height: 200px;
+            }
+
+            .image-container1 img {
+                height: 200px;
+            }
+
+            .text3 p {
+                font-size: 13px;
+                line-height: 17px;
+            }
+
+            .text2 h1 {
+                font-size: 26px;
+            }
+
+            .delivery {
+                margin-top: 15px;
+                height: 250px;
+            }
+
+            .deliver {
+                height: auto;
+                margin: 35px auto;
+                flex-wrap: wrap;
+            }
+
+            .text4 h1 {
+                font-size: 20px;
+                letter-spacing: 3px;
+                text-align: center;
+            }
+
+            .text4 {
+                gap: 12px;
+                padding: 0px 10px 20px 10px;
+                align-items: center;
+            }
+
+            .text4 p {
+                font-size: 11px;
+                line-height: 18px;
+                text-align: center;
+            }
+
+            .text4 a {
+                width: 90px;
+                height: 40px;
+                font-size: 13px;
+                line-height: 36px;
+            }
+
+            .text3 {
+                gap: 7px;
+                padding: 10px 10px 2px 10px;
+            }
+
+            .text3 h4 {
+                font-size: 15px;
+            }
+
+            .heart i {
+                font-size: 16px;
+            }
+
+            .btn h5 {
+                font-size: 16px;
+            }
+
+            .btn i {
+                font-size: 17px;
+            }
+
+            .btn a {
+                width: 35px;
+                height: 35px;
+                line-height: 38px;
+            }
+
+            header .icons i {
+                line-height: 07px;
+            }
+
+            .chef1 {
+                gap: 30px;
+            }
+
+            .chef {
+                width: 100%;
+            }
+
+            .chefs {
+                width: 100%;
+            }
+
+            .cook {
+                width: 280px;
+                gap: 15px;
+            }
+
+            .about {
+                gap: 20px;
+                padding: 30px 0px;
+            }
+
+            .about h1 {
+                font-size: 23px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            .div h3 {
+                font-size: 17px;
+            }
+
+            .expert {
+                height: 320px;
+            }
+
+            .expert img {
+                width: 100%;
+                object-position: top;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .aboutus p {
+                font-size: 13px;
+            }
+
+            .service {
+                gap: 3px;
+            }
+
+            .service h3 {
+                font-size: 16px;
+            }
+
+            .service p {
+                font-size: 12px;
+            }
+
+            .content6 {
+                gap: 22px;
+                padding: 0px;
+                width: 90%;
+                margin: auto;
+            }
+
+            .content6 h1 {
+                font-size: 26px;
+            }
+
+            .blogs {
+                width: 100%;
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .blog {
+                width: 300px;
+                gap: 13px;
+                flex-wrap: wrap;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 30px 0;
+                flex-wrap: wrap;
+            }
+
+            .fast {
+                line-height: 28px;
+                width: 500px;
+            }
+
+            .fast p {
+                color: #fff;
+                font-size: 15px;
+            }
+
+            .product {
+                gap: 5px;
+                justify-content: center;
+                align-items: flex-start;
+                width: 500px;
+            }
+
+            .product li a {
+                line-height: 30px;
+                font-size: 15px;
+            }
+
+            .text {
+                font-size: 20px;
+            }
+
+            .populars {
+                padding: 0;
+                gap: 20px;
+            }
+
+            .navi {
+                display: none;
+            }
+
+            .navbar {
+                padding: 5px 20px;
+            }
+
+            .copy {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -929,9 +1937,9 @@
             </div>
             <div class="navi">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a id="active" href="index.html">Home</a></li>
                     <li><a href="meun.html">Menu</a></li>
-                    <li><a href="#aboutus">About us</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
                     <li><a href="contact.html">Contact us</a></li>
                 </ul>
             </div>
@@ -939,7 +1947,7 @@
                 <button class="hamburger-icon" fdprocessedid="jo5kz">
                     <label for="dropdown">
                         <div class="icon2">
-                            <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
+                            <i id="search" class="fa-solid fa-magnifying-glass" id="search-btn"></i>
                             <i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i>
                         </div>
                     </label>
@@ -1000,101 +2008,103 @@
         </div>
     </section>
     <section>
-        <div class="popular">
+        <div class="cards">
             <div class="dish">
                 <h1>FEATURED FLAVOURS</h1>
             </div>
-            <div class="places">
-                <div class="card">
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="grilled chicken.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>Grilled Tandoori</h2>
-                            <p>Grilled chicken is tender and juicy with a smoky, charred flavor. Marinated in herbs and
-                                spices.
-                            </p>
-                            <div class="basket">
-                                <h5>$35.15</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+            <div class="content-box">
+                <div class="container-image">
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="grilled chicken.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>Grilled chicken is tender and juicy with a smoky, charred flavor. Marinated in
+                                        herbs
+                                        and
+                                        spices.</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Grilled chicken</h3>
                         </div>
                     </div>
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="shawarma1.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>Shish Tawook Shawarma</h2>
-                            <p>Shish Tawook Shawarma is a flavorful Middle Eastern dish made with marinated chicken.
-                            </p>
-                            <div class="basket">
-                                <h5>$20.05</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="shawarma1.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>Shish Tawook Shawarma is a flavorful Middle Eastern dish made with marinated
+                                        chicken.
+                                    </p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Shish Tawook Shawarma</h3>
                         </div>
                     </div>
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="pasta1.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>Zesty Manchurian Pasta</h2>
-                            <p>Zesty Chicken Manchurian Pasta is a flavors, combining tender Manchurian with perfectly
-                                cooked
-                                pasta. </p>
-                            <div class="basket">
-                                <h5>$25.55</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="pasta1.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>Zesty Chicken Manchurian Pasta is a flavors, combining tender Manchurian with
+                                        perfectly
+                                    </p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Zesty Chicken Manchurian</h3>
                         </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="cheese.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>MacNcheese</h2>
-                            <p>Mac N Cheese is a classic comfort dish made with tender pasta coated in a rich, creamy
-                                cheese
-                                sauce.</p>
-                            <div class="basket">
-                                <h5>$30.17</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="cheese.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>Mac N Cheese is a classic comfort dish made with tender pasta coated in a rich,
+                                        creamy
+                                        cheese
+                                        sauce.</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Mac N Cheese</h3>
                         </div>
                     </div>
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="pasta.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>Italian Delight Pasta</h2>
-                            <p>This delightful pasta is a perfect blend of smooth, velvety sauce and vibrant spring
-                                vegetables.
-                            </p>
-                            <div class="basket">
-                                <h5>$37.15</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="freshly-baked-lasagna-with-savory-bolognese-sauce-generative-ai.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>This delightful pasta is a perfect blend of smooth, velvety sauce and vibrant
+                                        spring
+                                        vegetables.</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Italian Delight Pasta</h3>
                         </div>
                     </div>
-                    <div class="cards">
-                        <div class="imgbox">
-                            <img src="french-fries.jpg" alt="">
-                        </div>
-                        <div class="content1">
-                            <h2>Crisp ‘n’ Crave Fries</h2>
-                            <p>Crisp ‘n’ Crave Fries are perfectly fried to golden-brown perfection, offering a
-                                delightful
-                                crunch with every bite.</p>
-                            <div class="basket">
-                                <h5>$40.00</h5>
-                                <a href="#"><i class="fa-solid fa-basket-shopping" style="color: #ffffff;"></i></a>
+                    <div class="box">
+                        <div class="image-container1">
+                            <img src="french-fries.jpg" alt="Sample Image">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <p>Crisp ‘n’ Crave Fries are perfectly fried to golden-brown perfection, offering a
+                                        delightful
+                                        crunch with every bite.</p>
+                                </div>
                             </div>
+                        </div>
+                        <div class="overlay1">
+                            <h3>Crisp ‘n’ Crave Fries</h3>
                         </div>
                     </div>
                 </div>
@@ -1358,80 +2368,80 @@
             <div class="about">
                 <h1>MEET OUR EXPERT CHEFS</h1>
                 <div class="chefs">
-                    <div class="cook">
-                        <div class="expert">
-                            <img src="chef.jpg" alt="">
-                            <div class="aboutus">
-                                <h5>HEAD CHEF</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                    <div class="chef1">
+                        <div class="cook">
+                            <div class="expert">
+                                <img src="chef.jpg" alt="">
+                                <div class="aboutus">
+                                    <h5>HEAD CHEF</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <h3>PARISHEY ZAIB</h3>
                             </div>
                         </div>
-                        <div class="div">
-                            <h3>PARISHEY ZAIB</h3>
-                        </div>
-                    </div>
-                    <div class="cook">
-                        <div class="expert">
-                            <img src="chef2.jpg" alt="">
-                            <div class="aboutus">
-                                <h5>HEAD CHEF</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                        <div class="cook">
+                            <div class="expert">
+                                <img src="chef2.jpg" alt="">
+                                <div class="aboutus">
+                                    <h5>HEAD CHEF</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <h3>HANEEN YOUSUF</h3>
                             </div>
                         </div>
-                        <div class="div">
-                            <h3>HANEEN YOUSUF</h3>
-                        </div>
-                    </div>
-                    <div class="cook">
-                        <div class="expert">
-                            <img src="chef3.jpg" alt="">
-                            <div class="aboutus">
-                                <h5>KITCHEN PROTER</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                        <div class="cook">
+                            <div class="expert">
+                                <img src="chef3.jpg" alt="">
+                                <div class="aboutus">
+                                    <h5>KITCHEN PROTER</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <h3>UFAQ ARSALAN</h3>
                             </div>
                         </div>
-                        <div class="div">
-                            <h3>UFAQ ARSALAN</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="chef1">
-                    <div class="cook">
-                        <div class="expert">
-                            <img src="chef4.jpg" alt="">
-                            <div class="aboutus">
-                                <h5>EXECUTIVE CHEF</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                        <div class="cook">
+                            <div class="expert">
+                                <img src="chef4.jpg" alt="">
+                                <div class="aboutus">
+                                    <h5>EXECUTIVE CHEF</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <h3>ZAROON KASHAF</h3>
                             </div>
                         </div>
-                        <div class="div">
-                            <h3>ZAROON KASHAF</h3>
-                        </div>
-                    </div>
-                    <div class="cook">
-                        <div class="expert">
-                            <div class="chef">
-                                <img src="chef5.jpg" alt="">
+                        <div class="cook">
+                            <div class="expert">
+                                <div class="chef">
+                                    <img src="chef5.jpg" alt="">
+                                </div>
+                                <div class="aboutus">
+                                    <h5>EXECUTIVE CHEF</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
                             </div>
-                            <div class="aboutus">
-                                <h5>EXECUTIVE CHEF</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
-                            </div>
-                        </div>
-                        <div class="div">
-                            <h3>IRTAZA HAIDER</h3>
-                        </div>
-                    </div>
-                    <div class="cook">
-                        <div class="expert">
-                            <img src="chef6.jpg" alt="">
-                            <div class="aboutus">
-                                <h5>KITCHEN PORTER</h5>
-                                <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                            <div class="div">
+                                <h3>IRTAZA HAIDER</h3>
                             </div>
                         </div>
-                        <div class="div">
-                            <h3>ZAVIYAR SULTAN</h3>
+                        <div class="cook">
+                            <div class="expert">
+                                <img src="chef6.jpg" alt="">
+                                <div class="aboutus">
+                                    <h5>KITCHEN PORTER</h5>
+                                    <P>Indulge in our mouth-watering Signature Stacks each layer packed with.</P>
+                                </div>
+                            </div>
+                            <div class="div">
+                                <h3>ZAVIYAR SULTAN</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1457,16 +2467,16 @@
                     <li><a href="">Breakfast Product</a></li>
                     <li><a href="">Pizza</a></li>
                     <li><a href="">French Fries</a></li>
-                    <li><a href="">Sauages</a></li>
+                    <li><a href="">Sausages</a></li>
                 </ul>
             </div>
             <div class="product">
                 <h3>QUICK LINKS</h3>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Menu</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meun.html">Menu</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="product">

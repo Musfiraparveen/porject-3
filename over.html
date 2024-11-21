@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container-image {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            gap: 65px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container {
+            position: relative;
+            width: 350px;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(106, 120, 129, 0.7);
+            transition: height 0.7s ease;
+        }
+
+        .image-container:hover .overlay {
+            height: 100%;
+        }
+
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+
+        .image-container:hover .overlay-content {
+            opacity: 1;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .dish h1 {
+            font-size: 50px;
+        }
+
+        .overlay1 h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #41681a;
+            text-transform: uppercase;
+        }
+        .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="dish">
+            <h1>FEATURED FLAVOURS</h1>
+        </div>
+        <div class="content-box">
+            <div class="container-image">
+                <div class="box">
+                    <div class="image-container">
+                        <img src="grilled chicken.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>Grilled chicken is tender and juicy with a smoky, charred flavor. Marinated in herbs
+                                    and
+                                    spices.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Grilled chicken</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image-container">
+                        <img src="shawarma1.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>Shish Tawook Shawarma is a flavorful Middle Eastern dish made with marinated chicken.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Shish Tawook Shawarma</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image-container">
+                        <img src="pasta1.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>Zesty Chicken Manchurian Pasta is a flavors, combining tender Manchurian with
+                                    perfectly
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Zesty Chicken Manchurian</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container-image">
+                <div class="box">
+                    <div class="image-container">
+                        <img src="cheese.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>Mac N Cheese is a classic comfort dish made with tender pasta coated in a rich,
+                                    creamy
+                                    cheese
+                                    sauce.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Mac N Cheese</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image-container">
+                        <img src="pasta.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>This delightful pasta is a perfect blend of smooth, velvety sauce and vibrant spring
+                                    vegetables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Italian Delight Pasta</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image-container">
+                        <img src="french-fries.jpg" alt="Sample Image">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <p>Crisp ‘n’ Crave Fries are perfectly fried to golden-brown perfection, offering a
+                                    delightful
+                                    crunch with every bite.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay1">
+                        <h3>Crisp ‘n’ Crave Fries</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

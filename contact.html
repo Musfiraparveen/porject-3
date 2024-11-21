@@ -90,14 +90,16 @@
         }
 
         .content {
-            width: 100%;
+            width: 90%;
+            margin: auto;
             display: flex;
             gap: 20px;
             padding: 20px 0px;
         }
 
         .content1 {
-            width: 100%;
+            width: 90%;
+            margin: auto;
             display: flex;
             gap: 20px;
             padding-bottom: 20px;
@@ -156,7 +158,8 @@
         }
 
         .map {
-            width: 100%;
+            width: 90%;
+            margin: auto;
             height: 40rem;
         }
 
@@ -172,11 +175,13 @@
             height: 50px;
             outline: none;
             text-indent: 2%;
+            border: none;
 
         }
 
         .form p {
             font-size: 20px;
+            padding-bottom: 10px;
         }
 
         .form-content {
@@ -236,7 +241,6 @@
             width: 125px;
             height: 45px;
             line-height: 40px;
-            letter-spacing: 1px;
             font-size: 19px;
             text-align: center;
             border: 2px solid black;
@@ -254,21 +258,6 @@
 
         ::placeholder {
             font-size: 15px;
-        }
-
-        @media (min-width:300px) and (max-width:576px) {
-            .content {
-                flex-wrap: wrap;
-                width: 100%;
-            }
-
-            .img {
-                width: 50%;
-            }
-
-            .img img {
-                width: 100%;
-            }
         }
 
         #contact {
@@ -363,6 +352,422 @@
             border-top: 1px solid white;
             padding: 20px 0px;
         }
+
+        #active {
+            color: #ffd599;
+        }
+
+        @media (min-width:992px) and (max-width:1200px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            #container {
+                padding-top: 20px;
+            }
+
+            .img {
+                width: 50%;
+                height: 40rem;
+            }
+
+            .img img {
+                width: 100%;
+            }
+
+            .text {
+                height: 40rem;
+            }
+
+            .text p {
+                font-size: 17px;
+            }
+
+            .map {
+                width: 100%;
+                height: 30rem;
+            }
+
+            .content1 {
+                width: 100%;
+            }
+
+            .form-group {
+                height: 40rem;
+            }
+
+            .btn a {
+                font-size: 17px;
+            }
+
+            .form p {
+                font-size: 19px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:992px) {
+            .navi li a {
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            #container {
+                padding-top: 20px;
+            }
+
+            .content {
+                width: 100%;
+                flex-wrap: wrap-reverse;
+            }
+
+            .img {
+                width: 100%;
+                height: 480px;
+            }
+
+            .img img {
+                width: 100%;
+            }
+
+            .text {
+                width: 100%;
+                height: 520px;
+            }
+
+            .text p {
+                font-size: 17px;
+            }
+
+            .map {
+                width: 100%;
+                height: 430px;
+            }
+
+            .content1 {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .form-container {
+                width: 100%;
+            }
+
+            .form-group {
+                height: 40rem;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .container {
+                width: 95%;
+                margin: auto;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width:576px) and (max-width:768px) {
+            .logo {
+                width: 100%;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .navi li a {
+                font-size: 17px;
+                display: none;
+                font-weight: bold;
+            }
+
+            #container {
+                padding-top: 0px;
+            }
+
+            .content {
+                width: 100%;
+                flex-wrap: wrap-reverse;
+            }
+
+            .img {
+                width: 100%;
+                height: 480px;
+            }
+
+            .img img {
+                width: 100%;
+            }
+
+            .text {
+                width: 100%;
+                height: 520px;
+            }
+
+            .text p {
+                font-size: 17px;
+            }
+
+            .map {
+                width: 100%;
+                height: 430px;
+            }
+
+            .content1 {
+                width: 100%;
+                flex-wrap: wrap;
+                padding-bottom: 0px;
+            }
+
+            .form-container {
+                width: 100%;
+            }
+
+            .form-group {
+                height: 40rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .fast {
+                width: 45%;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 50px 0;
+                flex-wrap: wrap;
+            }
+
+            .product {
+                width: 45%;
+                gap: 17px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width:300px) and (max-width:576px) {
+            .logo {
+                width: 100%;
+            }
+
+            .logo img {
+                width: 110px;
+            }
+
+            .navi li a {
+                font-size: 17px;
+                display: none;
+                font-weight: bold;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            #container {
+                padding-top: 0px;
+            }
+
+            .content {
+                width: 100%;
+                flex-wrap: wrap-reverse;
+                gap: 13px;
+                padding: 15px 0px;
+            }
+
+            .img {
+                width: 100%;
+                height: 390px;
+            }
+
+            .img img {
+                width: 100%;
+            }
+
+            .text {
+                width: 100%;
+                height: 400px;
+                gap: 23px;
+            }
+
+            .text h3 {
+                font-size: 25px;
+            }
+
+            .text h6 {
+                font-size: 15px;
+            }
+
+            .text p {
+                font-size: 13px;
+            }
+
+            .button {
+                gap: 13px;
+            }
+
+            .button a {
+                width: 100px;
+                height: 35px;
+                line-height: 32px;
+                border: 1px solid black;
+                font-size: 13px;
+            }
+
+            .map {
+                width: 100%;
+                height: 370px;
+            }
+
+            .content1 {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 13px;
+                padding-bottom: 0px;
+            }
+
+            .form-container {
+                width: 100%;
+            }
+
+            .form-group {
+                height: 500px;
+            }
+
+            .text2 h1 {
+                font-size: 26px;
+            }
+
+            .text2 p {
+                font-size: 13px;
+            }
+
+            .form-content {
+                gap: 17px;
+            }
+
+            .form p {
+                font-size: 15px;
+                padding-bottom: 7px;
+            }
+
+            .form input {
+                height: 42px;
+                text-indent: 2%;
+                font-size: 15px;
+            }
+
+            .btn a {
+                width: 100px;
+                height: 38px;
+                line-height: 33px;
+                font-size: 15px;
+                border: 1px solid black;
+            }
+
+            .text2 {
+                gap: 9px;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            .footer {
+                width: 90%;
+                margin: auto;
+                gap: 30px;
+                padding: 30px 0;
+                flex-wrap: wrap;
+            }
+
+            .fast {
+                line-height: 28px;
+                width: 500px;
+            }
+
+            .fast p {
+                color: #fff;
+                font-size: 15px;
+            }
+
+            .product {
+                gap: 5px;
+                justify-content: center;
+                align-items: flex-start;
+                width: 500px;
+            }
+
+            .product li a {
+                line-height: 30px;
+                font-size: 15px;
+            }
+
+            .copy {
+                font-size: 13px;
+            }
+
+            .navbar {
+                padding: 5px 15px;
+            }
+        }
     </style>
 </head>
 
@@ -375,8 +780,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="meun.html">Menu</a></li>
-                <li><a href="Aboutus.html">About us</a></li>
-                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a id="active" href="contact.html">Contact us</a></li>
             </ul>
         </div>
         <div class="icons">
@@ -491,7 +896,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="meun.html">Menu</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
