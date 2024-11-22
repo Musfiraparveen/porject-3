@@ -51,6 +51,12 @@
             z-index: 1;
         }
 
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
         .navi ul {
             display: flex;
             gap: 30px;
@@ -487,6 +493,11 @@
             border-radius: 10px;
             text-align: center;
             background-color: #902031;
+            transition: 2s;
+        }
+
+        .test a:hover {
+            background: linear-gradient(#e66465, #9198e5);
         }
 
         .img1 {
@@ -588,13 +599,13 @@
             background-image: url("back.jpg");
             width: 100%;
             margin: 50px auto;
-            height: 90vh;
+            height: 100vh;
             display: flex;
         }
 
         .delivery {
             width: 100%;
-            height: 90vh;
+            height: 100vh;
         }
 
         .delivery img {
@@ -1933,7 +1944,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.svg">
+                <a href="index.html"><img src="logo.svg"></a>
             </div>
             <div class="navi">
                 <ul>
@@ -1959,6 +1970,8 @@
                 <input type="search" class="search" id="search-bar" placeholder="Search Our Website">
             </form>
         </nav>
+    </header>
+    <section>
         <div class="slider">
             <div class="slide" id="slide1">
                 <div class="text">"A Symphony of Spices, A Feast for the Senses – Indulge in Authentic Biryani!"</div>
@@ -1977,14 +1990,14 @@
                 <div class="text">"Savor the Juicy, Tender Taste of Freshly Grilled Chicken!"</div>
             </div>
         </div>
-    </header>
+    </section>
     <section>
         <div class="content3">
             <div class="text1">
                 <h1>WHAT'S ON YOUR MIND</h1>
             </div>
             <div class="image1">
-                <div class="image">
+                <div class="image" id="image">
                     <img src="burger1.png">
                     <h5>Burger</h5>
                 </div>
@@ -2079,7 +2092,8 @@
                     </div>
                     <div class="box">
                         <div class="image-container1">
-                            <img src="freshly-baked-lasagna-with-savory-bolognese-sauce-generative-ai.jpg" alt="Sample Image">
+                            <img src="freshly-baked-lasagna-with-savory-bolognese-sauce-generative-ai.jpg"
+                                alt="Sample Image">
                             <div class="overlay">
                                 <div class="overlay-content">
                                     <p>This delightful pasta is a perfect blend of smooth, velvety sauce and vibrant

@@ -48,6 +48,12 @@
             z-index: 1;
         }
 
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
         .navi ul {
             display: flex;
             gap: 30px;
@@ -90,7 +96,7 @@
         }
 
         .content {
-            width: 90%;
+            width: 95%;
             margin: auto;
             display: flex;
             gap: 20px;
@@ -98,7 +104,7 @@
         }
 
         .content1 {
-            width: 90%;
+            width: 95%;
             margin: auto;
             display: flex;
             gap: 20px;
@@ -147,9 +153,10 @@
             text-decoration: none;
             width: 125px;
             height: 40px;
-            line-height: 40px;
+            line-height: 36px;
             text-align: center;
             border: 2px solid black;
+            transition: 2s;
         }
 
         .map iframe {
@@ -158,7 +165,7 @@
         }
 
         .map {
-            width: 90%;
+            width: 95%;
             margin: auto;
             height: 40rem;
         }
@@ -235,7 +242,8 @@
         }
 
         .btn a {
-            color: black;
+            color: white;
+            background-color: #161515;
             text-decoration: none;
             display: block;
             width: 125px;
@@ -244,6 +252,7 @@
             font-size: 19px;
             text-align: center;
             border: 2px solid black;
+            transition: 2s;
         }
 
         .btn button {
@@ -265,9 +274,21 @@
             color: white;
         }
 
-        #container {
-            padding-top: 0px;
+        #map:hover {
+            color: white;
+            background-color: #161515;
         }
+
+        #contact:hover {
+            background-color: #f2f2f2;
+            color: black;
+        }
+
+        .btn a:hover {
+            background-color: #f2f2f2;
+            color: black;
+        }
+
 
         footer {
             font-family: "Jost", sans-serif;
@@ -774,7 +795,7 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.svg">
+            <a href="index.html"><img src="logo.svg"></a>
         </div>
         <div class="navi">
             <ul>
@@ -799,7 +820,7 @@
                 <p>676 Pacific C Hwy
                     Huntington Beach, CA 67898</p>
                 <div class="button">
-                    <a href="#map">View Map</a>
+                    <a id="map" href="#map">View Map</a>
                     <a href="#book" id="contact">Contact Us</a>
                 </div>
                 <h6>When</h6>
@@ -888,7 +909,7 @@
                     <li><a href="">Breakfast Product</a></li>
                     <li><a href="">Pizza</a></li>
                     <li><a href="">French Fries</a></li>
-                    <li><a href="">Sauages</a></li>
+                    <li><a href="">Sausages</a></li>
                 </ul>
             </div>
             <div class="product">

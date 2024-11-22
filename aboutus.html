@@ -52,6 +52,12 @@
             z-index: 1;
         }
 
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
         .navi ul {
             display: flex;
             gap: 30px;
@@ -183,11 +189,18 @@
             color: white;
             letter-spacing: 2px;
             background-color: grey;
+            transition: 2s;
+        }
+
+        .text a:hover {
+            background-color: #c5a480;
         }
 
         .image {
             width: 50%;
             height: 35rem;
+            position: relative;
+            overflow: hidden;
             /* background-image: url(nuggets.jpg);
             background-position: left;
             background-size: cover;
@@ -198,6 +211,28 @@
             width: 100%;
             height: 35rem;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.1);
+        }
+
+        .wave {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgb(87, 64, 64);
+            background: linear-gradient(90deg, rgba(87, 64, 64, 0.5858718487394958) 50%, rgba(187, 119, 22, 0.6671043417366946) 100%);
+            transform: skewX(-20deg);
+            transition: all 0.7s ease-in-out;
+            pointer-events: none;
+        }
+
+        .image:hover .wave {
+            left: 100%;
         }
 
         .content1 {
@@ -222,6 +257,14 @@
             align-items: center;
             text-align: center;
             gap: 20px;
+        }
+
+        .icon img {
+            transition: 0.7s ease;
+        }
+
+        .icon:hover img {
+            transform: scale(1.3);
         }
 
         .about {
@@ -329,6 +372,7 @@
         #main {
             padding-bottom: 50px;
         }
+
 
         @media (min-width:992px) and (max-width:1200px) {
             .navi li a {
@@ -797,7 +841,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.svg">
+                <a href="index.html"><img src="logo.svg"></a>
             </div>
             <div class="navi">
                 <ul>
@@ -836,6 +880,7 @@
                 </div>
                 <div class="image">
                     <img src="nuggets.jpg" alt="">
+                    <div class="wave"></div>
                 </div>
             </div>
         </div>
@@ -887,6 +932,7 @@
             <div class="container" id="main">
                 <div class="image">
                     <img src="view-delicious-shawarma-dish.jpg" alt="">
+                    <div class="wave"></div>
                 </div>
                 <div class="text">
                     <h1>OUR GOALS & HISTORY</h1>
@@ -921,7 +967,7 @@
                     <li><a href="">Breakfast Product</a></li>
                     <li><a href="">Pizza</a></li>
                     <li><a href="">French Fries</a></li>
-                    <li><a href="">Sauages</a></li>
+                    <li><a href="">Sausages</a></li>
                 </ul>
             </div>
             <div class="product">
