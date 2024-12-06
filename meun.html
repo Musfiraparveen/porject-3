@@ -147,7 +147,13 @@
             z-index: 1;
         }
 
-        .navi ul {
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .navi {
             display: flex;
             gap: 30px;
             font-size: 20px;
@@ -174,6 +180,16 @@
 
         .navi li a:hover::after {
             transform: scale(1.0);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
         }
 
         .our-menu h1 {
@@ -423,10 +439,38 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
+            }
+        }
+
         @media (min-width:768px) and (max-width:992px) {
             .navi li a {
                 font-size: 17px;
                 font-weight: bold;
+                display: block;
             }
 
             .whole {
@@ -514,10 +558,43 @@
         }
 
         @media (min-width:576px) and (max-width:768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .logo {
+                width: 50%;
+            }
+
+            .logo img {
+                width: 100px;
+            }
+
             .navi li a {
                 font-size: 17px;
                 font-weight: bold;
-                display: none;
+                display: block;
             }
 
             .whole {
@@ -610,10 +687,35 @@
         }
 
         @media (min-width:300px) and (max-width:576px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
+            }
+
             .navi li a {
                 font-size: 17px;
                 font-weight: bold;
-                display: none;
+                display: block;
             }
 
             .navbar {
@@ -740,16 +842,16 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="logo.svg"></a>
+                <a href="meun.html"><img src="logo.svg"></a>
             </div>
-            <div class="navi">
-                <ul>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul class="navi">
                     <li><a href="index.html">Home</a></li>
-                    <li><a id="active" href="meun.html">Menu</a></li>
                     <li><a href="aboutus.html">About us</a></li>
+                    <li><a id="active" href="meun.html">Menu</a></li>
                     <li><a href="contact.html">Contact us</a></li>
                 </ul>
-            </div>
             <div class="icons">
                 <button class="hamburger-icon" fdprocessedid="jo5kz">
                     <label for="dropdown">
@@ -767,184 +869,187 @@
             </form>
         </nav>
     </header>
-    <div class="our-menu">
-        <div class="div">
-            <h1>OUR MENU</h1>
-            <h3>Find Your Desire Dish In Our Restaurant</h3>
-        </div>
-        <div class="whole">
-            <div class="menu">
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="bun.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>7.05 $</h4>
+    <section>
+        <div class="our-menu">
+            <div class="div">
+                <h1>OUR MENU</h1>
+                <h3>Find Your Desire Dish In Our Restaurant</h3>
+            </div>
+            <div class="whole">
+                <div class="menu">
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="bun.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>7.05 $</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text">
-                        <h5>BURGER</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="french-fries.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>4.35 $</h4>
-                            </div>
+                        <div class="text">
+                            <h5>BURGER</h5>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>FRENCH FRIES</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="taccos.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>5.67 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="french-fries.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>4.35 $</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text">
-                        <h5>TACOS</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="crunchy chicken.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>8.04 $</h4>
-                            </div>
+                        <div class="text">
+                            <h5>FRENCH FRIES</h5>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>GRILLED CHICKEN</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="gallery5.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>3.85 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="taccos.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>5.67 $</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text">
-                        <h5>CRISPY CHICKEN</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="beef-burger.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>5.07 $</h4>
-                            </div>
+                        <div class="text">
+                            <h5>TACOS</h5>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>BEEF BURGER</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="mixed-pizza.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>6.87 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="crunchy chicken.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>8.04 $</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text">
-                        <h5>CLASSIC PIZZA</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="beef-hot-dog.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>4.34 $</h4>
-                            </div>
+                        <div class="text">
+                            <h5>GRILLED CHICKEN</h5>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>HOT DOG</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="shawarma.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>8.35 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="gallery5.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>3.85 $</h4>
+                                </div>
                             </div>
                         </div>
+                        <div class="text">
+                            <h5>CRISPY CHICKEN</h5>
+                        </div>
                     </div>
-                    <div class="text">
-                        <h5>BEEF SHAWARMA</h5>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="beef-burger.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>5.07 $</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>BEEF BURGER</h5>
+                        </div>
                     </div>
-                </div>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="mixed-pizza.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>6.87 $</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>CLASSIC PIZZA</h5>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="beef-hot-dog.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>4.34 $</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>HOT DOG</h5>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="shawarma.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>8.35 $</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>BEEF SHAWARMA</h5>
+                        </div>
+                    </div>
 
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="fried-chicken.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>6.89 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="fried-chicken.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>6.89 $</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text">
-                        <h5>FRIED CHICKEN</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="shawarma1.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>5.45 $</h4>
-                            </div>
+                        <div class="text">
+                            <h5>FRIED CHICKEN</h5>
                         </div>
                     </div>
-                    <div class="text">
-                        <h5>CLASSIC SHAWARMA</h5>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="morph-container">
-                        <img src="pizzaa.jpg.jpg" alt="">
-                        <div class="overlay-content">
-                            <div>
-                                <p>Good food bought today.</p>
-                                <h4>5.67 $</h4>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="shawarma1.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>5.45 $</h4>
+                                </div>
                             </div>
                         </div>
+                        <div class="text">
+                            <h5>CLASSIC SHAWARMA</h5>
+                        </div>
                     </div>
-                    <div class="text">
-                        <h5>ITALIAN PIZZA</h5>
+                    <div class="box">
+                        <div class="morph-container">
+                            <img src="pizzaa.jpg.jpg" alt="">
+                            <div class="overlay-content">
+                                <div>
+                                    <p>Good food bought today.</p>
+                                    <h4>5.67 $</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>ITALIAN PIZZA</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </section>
+    <section>
         <div class="our-menu" id="menu">
             <h1>COMBO OFFERS</h1>
             <div class="whole">
@@ -994,7 +1099,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <footer>
         <div class="footer">
             <div class="fast">

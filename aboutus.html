@@ -58,7 +58,8 @@
             z-index: 1;
         }
 
-        .navi ul {
+
+        .navi {
             display: flex;
             gap: 30px;
             font-size: 20px;
@@ -85,6 +86,17 @@
 
         .navi li a:hover::after {
             transform: scale(1.0);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
         }
 
         .video {
@@ -403,6 +415,34 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+                gap: 30px;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icon {
+                display: none;
+            }
+        }
+
         @media (min-width:768px) and (max-width:992px) {
             .navi li a {
                 font-size: 17px;
@@ -533,6 +573,32 @@
         }
 
         @media (min-width:576px) and (max-width:768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+                gap: 30px;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icon {
+                display: none;
+            }
+
             .logo {
                 width: 100%;
             }
@@ -542,7 +608,7 @@
             }
 
             .navi li a {
-                display: none;
+                display: block;
             }
 
             .video {
@@ -551,6 +617,14 @@
 
             .header {
                 height: 500px;
+            }
+
+            header .icons i {
+                font-size: 18px;
+            }
+
+            .icon2 {
+                gap: 20px;
             }
 
             .box {
@@ -671,6 +745,32 @@
         }
 
         @media (min-width:300px) and (max-width:576px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+                gap: 30px;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icon {
+                display: none;
+            }
+
             .logo {
                 width: 100%;
             }
@@ -680,7 +780,7 @@
             }
 
             .navi li a {
-                display: none;
+                display: block;
             }
 
             .video {
@@ -841,18 +941,18 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="logo.svg"></a>
+                <a href="aboutus.html"><img src="logo.svg"></a>
             </div>
-            <div class="navi">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="meun.html">Menu</a></li>
-                    <li><a id="active" href="#aboutus">About us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>
-            </div>
-            <div class="icons">
-                <img src="shopping-basket (1).png">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="navi">
+                <li><a href="index.html">Home</a></li>
+                <li><a id="active" href="#aboutus">About us</a></li>
+                <li><a href="meun.html">Menu</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+            <div class="icon">
+                <i class="fa-solid fa-basket-shopping" style="color: #ffffff;font-size: 20px;"></i>
             </div>
         </nav>
     </header>

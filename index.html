@@ -57,7 +57,7 @@
             z-index: 1;
         }
 
-        .navi ul {
+        .navi  {
             display: flex;
             gap: 30px;
             font-size: 20px;
@@ -85,6 +85,18 @@
         .navi li a:hover::after {
             transform: scale(1.0);
         }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
 
         .hamburger-icon {
             border: none;
@@ -297,6 +309,7 @@
         }
 
         .image h5 {
+            margin-top: 20px;
             text-align: center;
             font-size: 18px;
         }
@@ -954,6 +967,16 @@
             color: #ffd599;
         }
 
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
         @media (min-width:992px) and (max-width:1200px) {
             .navi li a {
                 font-size: 17px;
@@ -1061,6 +1084,33 @@
 
             .service p {
                 font-size: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
             }
         }
 
@@ -1313,6 +1363,39 @@
         }
 
         @media (min-width:576px) and (max-width:768px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .logo {
+                width: 50%;
+            }
+
+            .logo img {
+                width: 100px;
+            }
+
             .slider {
                 height: 65vh;
             }
@@ -1570,6 +1653,31 @@
         }
 
         @media (min-width:300px) and (max-width:576px) {
+            .navi {
+                display: none;
+                flex-direction: column;
+                background-color: #000;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 100%;
+                height: 230px;
+                text-align: center;
+            }
+
+            .menu-toggle:checked~.navi {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .icons {
+                display: none;
+            }
+
             .logo {
                 width: 50%;
             }
@@ -1940,6 +2048,10 @@
             .copy {
                 font-size: 14px;
             }
+
+            .icons i {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1950,14 +2062,14 @@
             <div class="logo">
                 <a href="index.html"><img src="logo.svg"></a>
             </div>
-            <div class="navi">
-                <ul>
-                    <li><a id="active" href="index.html">Home</a></li>
-                    <li><a href="meun.html">Menu</a></li>
-                    <li><a href="aboutus.html">About us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>
-            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="navi">
+                <li><a id="active" href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="meun.html">Menu</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
             <div class="icons">
                 <button class="hamburger-icon" fdprocessedid="jo5kz">
                     <label for="dropdown">
